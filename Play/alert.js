@@ -2,7 +2,7 @@ const { chromium } = require('playwright');
 
 
 (async() =>{
-    const browser = await chromium.launch({headless: false, slowMo:400});
+    const browser = await chromium.launch({headless: false, slowMo:700});
     const page = await browser.newPage();
     await page.goto('https://www.demoqa.com/alerts');
 
@@ -17,7 +17,7 @@ const { chromium } = require('playwright');
         console.log(dialog.message());
         await dialog.accept('text here my dude');
     });
-    await page.click('#promptButton');
+    await page.click('#promtButton');
 
     await browser.close();
 })();
